@@ -32,12 +32,12 @@ LIMIT 10;
 Medals won by age group
 */
 SELECT (CASE WHEN age < 18 THEN 'Under 18'
-			WHEN age BETWEEN 18 AND 22 THEN '18 - 22'
-			WHEN age BETWEEN 23 AND 27 THEN '23 - 27'
-			WHEN age BETWEEN 28 AND 32 THEN '28 - 32'
-			WHEN age BETWEEN 33 AND 37 THEN '33 - 37'
-			WHEN age >= 38 THEN '38+'
-			END) AS "Age Group",
+	WHEN age BETWEEN 18 AND 22 THEN '18 - 22'
+	WHEN age BETWEEN 23 AND 27 THEN '23 - 27'
+	WHEN age BETWEEN 28 AND 32 THEN '28 - 32'
+	WHEN age BETWEEN 33 AND 37 THEN '33 - 37'
+	WHEN age >= 38 THEN '38+'
+	END) AS "Age Group",
 COUNT(CASE WHEN medal = 'Gold' THEN 1 ELSE null END) AS "Gold",
 COUNT(CASE WHEN medal = 'Silver' THEN 1 ELSE null END) AS "Silver",
 COUNT(CASE WHEN medal = 'Bronze' THEN 1 ELSE null END) AS "Bronze",
